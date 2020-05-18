@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import MainContainer from './components/MainContainer';
+import SearchBar from './components/SearchBar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+
+  state = {
+    purveyors: [],
+    purveyorsProducts: []
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:3000/api/purveyors")
+    .then(response => response.json())
+    .then(data => {
+      this.setState({ purveyors: data })
+    })
+
+    fetch("http://localhost:3000/api/products")
+    .then(response => response.json())
+    .then(data => this.setState({ products: data }))
+  }
+
+
+
+
+
+  render() {
+    
+
+    return (
+      <div className="App">
+        <SearchBar products={this.state.products}/>
+        <MainContainer purveyors={this.state.purveyors} products={this.state.products} />
+      </div>
+    );
+  }
 }
 
 export default App;
