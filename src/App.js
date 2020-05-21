@@ -8,7 +8,8 @@ class App extends React.Component {
 
   state = {
     purveyors: [],
-    purveyorsProducts: []
+    products: [],
+    searchTerm: ""
   }
 
   componentDidMount() {
@@ -23,17 +24,24 @@ class App extends React.Component {
     .then(data => this.setState({ products: data }))
   }
 
+  handleSearch = (event) => {
+    this.setState({ searchTerm: event.target.value})
+    console.log(event.target.value)
+  }
 
 
 
 
   render() {
-    
-
+    let allProducts = this.state.products
+    if (this.state.searchTerm !== "") {
+      allProducts = allProducts.filter(product => product.name.includes(this.state.searchTerm))
+    }
+    // console.log(this.state)
     return (
       <div className="App">
-        <SearchBar products={this.state.products}/>
-        <MainContainer purveyors={this.state.purveyors} products={this.state.products} />
+        <SearchBar handleSearch={this.handleSearch}/>
+        <MainContainer purveyors={this.state.purveyors} products={allProducts} />
       </div>
     );
   }

@@ -38,7 +38,9 @@
 }
 
 .search-bar {
-  background: pink;
+  
+  background-image: linear-gradient(rgb(129, 129, 209), rgb(100, 100, 158));
+  border: 2px solid black;
   position: fixed;
   z-index: 99;
   top: 0px;
@@ -48,15 +50,31 @@
 }
 
 .purveyor {
-  height: 200px;
-  width: 80%;
+  height: 500px;
+  width: 30%;
   margin: 10%;
   border: solid black 2px;
   position: relative;
   max-height: 50em;
   overflow: scroll;
-  background: white;
+  background-image: linear-gradient(hsl(167, 64%, 87%), white);
   color: rgb(15, 15, 15);
   box-shadow: 5px 5px;
-  padding: none;
+  border-radius: 5px;
+  
+}
+
+.list-container {
+  background-image: linear-gradient(rgb(194, 118, 110), salmon);
+  bottom: 0px;
+  border: 2px solid black;
+  height: 200px;
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  overflow: scroll;
+}
+
+::placeholder {
+  color: black;
 }
