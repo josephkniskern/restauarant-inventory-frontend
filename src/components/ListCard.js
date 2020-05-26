@@ -4,7 +4,7 @@ const ListCard = (props) => {
 
   return(
     <div>
-      <li>{props.item.name}</li>
+      <li>{props.item.name} ${props.item.price}</li>
     </div>
   )
 }

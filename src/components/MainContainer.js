@@ -48,8 +48,9 @@ class MainContainer extends React.Component {
         method: "DELETE"
       }) 
       .then(response => response.json())
+      .then(() => this.setState({ lists: [] }))
     })
-    this.setState({ lists: []})
+    
   }
 
   // handleSearch = (event) => {
@@ -80,13 +81,11 @@ class MainContainer extends React.Component {
           />
           )}
           <div className="list-container">
-            
             <ListContainer 
               items={this.state.items} 
               handleSubmitClick={this.handleSubmitClick}
               handleDelete={this.handleDelete}
               />
-      
           </div>
       </div>
         

@@ -7,8 +7,15 @@ const ListContainer = (props) => {
   return(
     
     <div>
+      <table>
+      <tr>
+        <th>Product</th>
+        
+        <th>Price</th>
+      </tr>
+      </table>
       <ul>
-        {props.items.map( item => <ListCard key={item.idx} item={item}/>)} 
+        {props.items.map( item => <ListCard key={Math.random()} item={item}/>)} 
       </ul>
       <SaveButton onClick={() => props.handleSubmitClick()}>Save List</SaveButton>
       <SaveButton onClick={() => props.handleDelete()}>Clear List</SaveButton>

@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import MainContainer from './components/MainContainer';
 import SearchBar from './components/SearchBar';
+import AutoCompleteText from './components/AutoCompleteText'
 
 
 class App extends React.Component {
@@ -9,7 +10,6 @@ class App extends React.Component {
   state = {
     purveyors: [],
     products: [],
-    searchTerm: ""
   }
 
   componentDidMount() {
@@ -32,6 +32,8 @@ class App extends React.Component {
 
 
 
+
+
   render() {
     let allProducts = this.state.products
     if (this.state.searchTerm !== "") {
@@ -40,8 +42,16 @@ class App extends React.Component {
     // console.log(this.state)
     return (
       <div className="App">
-        <SearchBar handleSearch={this.handleSearch}/>
-        <MainContainer purveyors={this.state.purveyors} products={allProducts} />
+
+        <SearchBar 
+    
+        
+          products={this.state.products}
+          />
+        <MainContainer 
+          purveyors={this.state.purveyors} 
+          products={allProducts} 
+          />
       </div>
     );
   }

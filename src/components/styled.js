@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const SaveButton = styled.button `
   background: transparent;
   border-radius: 3px;
@@ -8,6 +9,7 @@ export const SaveButton = styled.button `
   margin: 0.5em 1em;
   padding: 0.25em 1em;
   outline: 0;
+  font-family: 'Chivo', sans-serif;
 `
 export const SearchInput = styled.input `
   background: transparent;
@@ -17,16 +19,14 @@ export const SearchInput = styled.input `
   margin: 0.5em 1em;
   padding: 0.25em 1em;
   outline: 0;
+  font-family: 'Chivo', sans-serif;
   
 `
 
 export const PurveyorRow = styled.div `
-  display: flex;
-  flex-direction: column;
-  height: 400px;
-  width: 100vw;
-  align-items: center;
-  padding-bottom: 100px;
+ text-align: center;
+ width: 500px;
+  
 
 `
 

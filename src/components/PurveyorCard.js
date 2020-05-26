@@ -9,7 +9,13 @@ const PurveyorCard = (props) => {
     <div className="purveyor">
       <h2>{props.purveyor.name}</h2>
       <div>
-        {props.purveyor.products.map(product => <ProductCard key={product.id} product={product} handleClick={props.handleClick}/>)}
+        {props.purveyor.products.map(product => 
+          <ProductCard 
+            key={product.id} 
+            product={product} 
+            handleClick={props.handleClick}
+          />
+        )}
       </div>
     </div>
   )
