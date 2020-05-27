@@ -8,6 +8,7 @@ class SearchBar extends React.Component {
   }
 
   suggestionSelect = value => {
+    console.log(value)
     this.setState({ 
       searchTerm: "",
       term: value
@@ -17,7 +18,7 @@ class SearchBar extends React.Component {
 
   handleSearch = (event) => {
     this.setState({ searchTerm: event.target.value})
-    // console.log(event.target.value)
+    console.log(event.target.value)
   }
 
   renderSearch = () => {
@@ -40,12 +41,13 @@ class SearchBar extends React.Component {
   
 
   render() {
-
+    
     return(
       <div className="navbar navbar-light bg-light" id="searchBar">
         <form>
           <input
             className="form-control mr-sm-2" 
+            // value={ this.state.term.name }
             type="text"
             placeholder="Search Products"
             onChange={event => this.handleSearch(event)}
