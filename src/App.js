@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import MainContainer from './components/MainContainer';
 import SearchBar from './components/SearchBar';
-import AutoCompleteText from './components/AutoCompleteText'
+
 
 
 class App extends React.Component {
@@ -41,7 +41,7 @@ class App extends React.Component {
     }
     // console.log(this.state)
     return (
-      <div className="App">
+      <div className="container">
 
         <SearchBar 
     

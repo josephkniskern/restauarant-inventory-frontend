@@ -3,9 +3,10 @@ import React from 'react'
 const ListCard = (props) => {
 
   return(
-    <div>
-      <li>{props.item.name} ${props.item.price}</li>
-    </div>
+    <tr>
+      <td>{props.item.name}</td>
+      <td>${props.item.price}</td>
+    </tr>
   )
 }
 

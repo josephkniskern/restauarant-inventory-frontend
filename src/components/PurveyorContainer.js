@@ -1,19 +1,19 @@
 import React from 'react'
 import PurveyorCard from './PurveyorCard'
-import { PurveyorRow } from './styled'
+
 
 
 class PurveyorContainer extends React.Component {
   render() {
     
     return(
-    <PurveyorRow>
+    <div className="col-sm">
       <PurveyorCard 
         purveyor={this.props.purveyor} 
         products={this.props.products} 
         handleClick={this.props.handleClick}
         />
-    </PurveyorRow>
+    </div>
     )
   }
 }

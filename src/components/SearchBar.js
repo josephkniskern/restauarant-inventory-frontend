@@ -1,6 +1,4 @@
 import React from 'react'
-import { SearchInput } from './styled'
-
 
 class SearchBar extends React.Component {
 
@@ -11,8 +9,8 @@ class SearchBar extends React.Component {
 
   suggestionSelect = value => {
     this.setState({ 
-      term: value,
-      searchTerm: ""
+      searchTerm: "",
+      term: value
     })
 
   }
@@ -28,9 +26,11 @@ class SearchBar extends React.Component {
       allProducts = allProducts.filter(product => product.name.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
       return  (
         <ul>
-          {allProducts.map(product => <li 
+          {allProducts.map(product => <li
+             
             onClick={() => this.suggestionSelect(product)} 
-            key={Math.rand}>{product.name}
+            key={Math.rand}>
+              {product.name}
             </li>
           )}
         </ul>
@@ -42,17 +42,18 @@ class SearchBar extends React.Component {
   render() {
 
     return(
-      <div className="search-bar">
-        <div>
-          <SearchInput 
+      <div className="navbar navbar-light bg-light" id="searchBar">
+        <form>
+          <input
+            className="form-control mr-sm-2" 
             type="text"
-            placeholder="Search"
+            placeholder="Search Products"
             onChange={event => this.handleSearch(event)}
           />
  
           {this.renderSearch()}
     
-        </div>
+        </form>
       </div>
     )
   }

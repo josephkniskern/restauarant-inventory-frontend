@@ -7,9 +7,11 @@ export const SaveButton = styled.button `
   border: 2px solid black;
   color: black;
   margin: 0.5em 1em;
-  padding: 0.25em 1em;
-  outline: 0;
-  font-family: 'Chivo', sans-serif;
+  padding: 0.25em .5em;
+  outline: 0 !important;
+  box-shadow: none;
+  font-size: .6em;
+  /* font-family: 'Chivo', sans-serif; */
 `
 export const SearchInput = styled.input `
   background: transparent;
@@ -19,13 +21,13 @@ export const SearchInput = styled.input `
   margin: 0.5em 1em;
   padding: 0.25em 1em;
   outline: 0;
-  font-family: 'Chivo', sans-serif;
+  /* font-family: 'Chivo', sans-serif; */
   
 `
 
 export const PurveyorRow = styled.div `
- text-align: center;
- width: 500px;
+ /* text-align: center;
+ width: 500px; */
   
 
 `

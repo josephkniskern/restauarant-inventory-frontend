@@ -33,7 +33,6 @@ class MainContainer extends React.Component {
       })
       .then(response => response.json())
       .then(response => {
-        console.log(response)
         this.setState({
           lists: [...this.state.lists, response]
         })
@@ -42,15 +41,15 @@ class MainContainer extends React.Component {
   }
 
   handleDelete = () => {
+    
     alert("delete clicked")
     this.state.lists.forEach(list => {
+      
       fetch(`http://localhost:3000/api/lists/${list.id}`, {
         method: "DELETE"
       }) 
-      .then(response => response.json())
-      .then(() => this.setState({ lists: [] }))
-    })
-    
+    }) 
+    return this.setState({ lists: [] })
   }
 
   // handleSearch = (event) => {
@@ -68,11 +67,10 @@ class MainContainer extends React.Component {
   }
 
   render() {
-   
-
+  
+    console.log(this.state.lists)
     return(
-
-      <div>
+      <div className="row">
         {this.props.purveyors.map(purveyor => <PurveyorContainer 
           key={purveyor.id} 
           purveyor={purveyor} 
@@ -80,12 +78,16 @@ class MainContainer extends React.Component {
           handleClick={this.handleClick}
           />
           )}
-          <div className="list-container">
-            <ListContainer 
-              items={this.state.items} 
-              handleSubmitClick={this.handleSubmitClick}
-              handleDelete={this.handleDelete}
-              />
+          <div className="fixed-bottom">
+            <div className="table">
+              <ListContainer 
+                class="collapse" 
+                id="navbarToggleExternalContent"
+                items={this.state.items} 
+                handleSubmitClick={this.handleSubmitClick}
+                handleDelete={this.handleDelete}
+                />
+            </div>
           </div>
       </div>
         

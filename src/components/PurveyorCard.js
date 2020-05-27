@@ -6,7 +6,7 @@ import ProductCard from './ProductCard'
 const PurveyorCard = (props) => {
 
   return(
-    <div className="purveyor">
+    <div className="col">
       <h2>{props.purveyor.name}</h2>
       <div>
         {props.purveyor.products.map(product => 
